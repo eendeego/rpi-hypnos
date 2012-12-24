@@ -1,0 +1,31 @@
+{
+  "name": "rpi-hypnos",
+  "preferGlobal" : "false",
+  "version": "0.1.0",
+  "author": "Hakim El Hattab <hakim.elhattab@gmail.com> (http://hakim.se/)",
+  "description": "Hypnos by @hakimel / http://hakim.se",
+  "contributors": [ 
+    {
+      "name": "Luis Reis",
+      "email": "luis@luismreis.com"
+    } 
+  ],
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/luismreis/rpi-hypnos.git"
+  },
+  "keyword": [
+    "raspberry-pi",
+    "openvg",
+    "canvas"
+  ],
+  "dependencies": {
+    "openvg-canvas" : ">=1.1.1"
+  },
+  "devDependencies": {},
+  "license" : "MIT",
+  "engines": {
+    "node": ">=0.8"
+  }
+}
