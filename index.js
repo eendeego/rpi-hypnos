@@ -39,13 +39,7 @@ function initialize() {
     });
   }
 
-  resize();
   update();
-}
-
-function resize() {
-  canvas.width = width;
-  canvas.height = height;
 }
 
 function update() {
