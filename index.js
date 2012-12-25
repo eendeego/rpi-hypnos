@@ -22,7 +22,7 @@ var
   quality = 180,
 
   // Layer instances
-  layers = [],
+  layers = new Array(quality),
 
   // Width/height of layers
   layerSize = radius * 0.25,
@@ -32,11 +32,11 @@ var
 
 function initialize() {
   for (var i = 0; i < quality; i++) {
-    layers.push({
+    layers[i] = {
       x: width / 2 + Math.sin(i / quality * 2 * Math.PI) * (radius - layerSize),
       y: height / 2 + Math.cos(i / quality * 2 * Math.PI) * (radius - layerSize),
       r: (i / quality) * Math.PI
-    });
+    };
   }
 
   context.strokeStyle = '#000';
