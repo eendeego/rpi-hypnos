@@ -42,6 +42,7 @@ function initialize() {
   context.strokeStyle = '#000';
   context.lineWidth = 1;
   context.fillStyle = '#fff';
+  context.globalCompositeOperation = 'destination-over';
 
   update();
 }
@@ -77,7 +78,6 @@ function paint() {
 
   // Draw the overlap layers
   for (i = layersLength - layerOverlap, len = layersLength; i < len; i++) {
-    context.globalCompositeOperation = 'destination-over';
     paintLayer(layers[i]);
   }
 
@@ -86,7 +86,6 @@ function paint() {
 
   // // Draw the normal layers underneath the overlap
   for (i = 0, len = layersLength; i < len; i++) {
-    context.globalCompositeOperation = 'destination-over';
     paintLayer(layers[i]);
   }
 }
@@ -102,7 +101,6 @@ function paintLayer(layer, mask) {
   context.beginPath();
   context.rect(-size2, -size2, size, size);
 
-  // No stroke if this is a mask
   if (mask) {
     context.clip();
   } else {
