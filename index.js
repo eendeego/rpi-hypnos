@@ -39,6 +39,10 @@ function initialize() {
     });
   }
 
+  context.strokeStyle = '#000';
+  context.lineWidth = 1;
+  context.fillStyle = '#fff';
+
   update();
 }
 
@@ -95,12 +99,9 @@ function paintLayer(layer, mask) {
 
   // No stroke if this is a mask
   if (!mask) {
-    context.strokeStyle = '#000';
-    context.lineWidth = 1;
     context.strokeRect(-size2, -size2, size, size);
   }
 
-  context.fillStyle = '#fff';
   context.fillRect(-size2, -size2, size, size);
 
   context.rotate(-layer.r);
