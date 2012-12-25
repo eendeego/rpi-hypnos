@@ -70,26 +70,19 @@ function paint() {
 
   // Draw the overlap layers
   for (i = layersLength - layerOverlap, len = layersLength; i < len; i++) {
-    context.save();
     context.globalCompositeOperation = 'destination-over';
     paintLayer(layers[i]);
-    context.restore();
   }
 
   // Cut out the overflow layers using the first layer as a mask
-  context.save();
   context.globalCompositeOperation = 'destination-in';
   paintLayer(layers[0], true);
-  context.restore();
 
   // // Draw the normal layers underneath the overlap
   for (i = 0, len = layersLength; i < len; i++) {
-    context.save();
     context.globalCompositeOperation = 'destination-over';
     paintLayer(layers[i]);
-    context.restore();
   }
-
 }
 
 // Pains one layer
@@ -110,6 +103,8 @@ function paintLayer(layer, mask) {
   context.fillStyle = '#fff';
   context.fillRect(-size2, -size2, size, size);
 
+  context.rotate(-layer.r);
+  context.translate(-layer.x, -layer.y);
 }
 
 initialize();
