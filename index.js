@@ -72,7 +72,6 @@ function paint() {
   var layersLength = layers.length;
   var i, len;
 
-  context.save();
   // Cut out the overflow layers using the first layer as a mask
   paintLayer(layers[0], true);
 
@@ -83,7 +82,7 @@ function paint() {
   }
 
   // Remove clipping region
-  context.restore();
+  context.resetClip();
 
   // // Draw the normal layers underneath the overlap
   for (i = 0, len = layersLength; i < len; i++) {
